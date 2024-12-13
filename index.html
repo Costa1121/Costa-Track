@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Costa-Track: The ultimate global e-commerce platform for digital products. Shop securely and seamlessly.">
+    <meta name="keywords" content="Costa-Track, digital products, e-commerce, secure transactions, online shopping, global platform">
+    <meta name="author" content="Costa-Track Team">
+    <title>Costa-Track | Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- External CSS for custom styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f9f9f9, #ececec);
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #3c6e71, #284b63);
+            color: white;
+            padding: 60px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .features h4 {
+            color: #3c6e71;
+        }
+        .features p {
+            color: #555;
+        }
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+        }
+        .toast-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1050;
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+        .btn-gradient {
+            background: linear-gradient(45deg, #3c6e71, #184c55);
+            color: white;
+            border: none;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(45deg, #184c55, #3c6e71);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3">Costa-Track</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#loginModal" data-bs-toggle="modal">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Search Bar -->
+        <div class="search-bar container text-center">
+            <input type="text" class="form-control" placeholder="Search for products or topics..." id="searchInput">
+            <button class="btn btn-gradient mt-2" onclick="performSearch()">Search</button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero text-center py-5 animate__animated animate__fadeIn">
+            <div class="container">
+                <h2>Welcome to Costa-Track</h2>
+                <p>Your gateway to premium digital products, secure transactions, and endless possibilities.</p>
+                <a href="#products" class="btn btn-light btn-lg">Explore Now</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features py-5">
+            <div class="container text-center">
+                <h3 class="mb-4">Why Choose Costa-Track?</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fas fa-lock fa-3x mb-2" style="color:#3c6e71;"></i>
+                        <h4>Massive Security</h4>
+                        <p>Advanced encryption and fraud detection ensure your data is safe.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-cogs fa-3x mb-2" style="color:#3c6e71;"></i>
+                        <h4>Seamless Experience</h4>
+                        <p>Enjoy intuitive designs, animations, and smooth transitions.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-credit-card fa-3x mb-2" style="color:#3c6e71;"></i>
+                        <h4>Global Payments</h4>
+                        <p>Supports Mada, Apple Pay, Samsung Pay, Visa, MasterCard, and PayPal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="py-5 bg-light">
+            <div class="container">
+                <h3 class="text-center mb-4">Our Products</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Product 1</h5>
+                                <p class="card-text">Description of Product 1</p>
+                                <button class="btn btn-primary add-to-cart" data-id="1">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional products can be added dynamically here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Section -->
+        <section id="checkout" class="py-5">
+            <div class="container">
+                <h3 class="text-center mb-4">Checkout</h3>
+                <form id="checkoutForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Name is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                        <div class="invalid-feedback">Phone number is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Valid email is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="paymentMethod" class="form-label">Payment Method</label>
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="">Select a payment method</option>
+                            <option value="mada">Mada</option>
+                            <option value="apple-pay">Apple Pay</option>
+                            <option value="samsung-pay">Samsung Pay</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">MasterCard</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a payment method.</div>
+                    </div>
+                    <button type="submit" class="btn btn-gradient">Complete Purchase</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-5">
+            <div class="container text-center">
+                <h3>About Us</h3>
+                <p>Costa-Track is dedicated to delivering premium digital products with a focus on security, usability, and innovation.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 bg-dark text-white">
+            <div class="container text-center">
+                <h3>Contact Us</h3>
+                <p>Have questions? Reach out to us anytime.</p>
+                <a href="mailto:support@costatrack.com" class="btn btn-light">Email Support</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <!-- Sign-In Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" novalidate>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                            <div class="invalid-feedback">Password is required.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Costa-Track. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        const cart = [];
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.getAttribute('data-id');
+                cart.push(productId);
+                showToast('Product added to cart!');
+            });
+        });
+
+        // Checkout form validation
+        document.getElementById('checkoutForm').addEventListener('submit', event => {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+            } else {
+                showToast('Purchase completed successfully!');
+            }
+        });
+
+        // Form validation for login
+        document.getElementById('loginForm').addEventListener('submit', async event => {
+            event.preventDefault();
+            const form = event.target;
+
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+            } else {
+                const email = document.getElementById('email').value;
+                try {
+                    const response = await fetch('http://localhost:3000/api/send-email', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                    });
+                    if (response.ok) {
+                        showToast('Sign-in successful! Check your email.');
+                    } else {
+                        showToast('Error signing in.');
+                    }
+                } catch (error) {
+                    showToast('Network error. Please try again later.');
+                }
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.classList.add('toast', 'show', 'bg-success', 'text-white', 'p-3', 'rounded');
+            toast.style.position = 'absolute';
+            toast.innerText = message;
+            document.querySelector('.toast-container').appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            showToast(`Searching for "${query}"...`);
+        }
+    </script>
+</body>
+</html>
